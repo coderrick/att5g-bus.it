@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bus:</strong>
+  <%= @network.bus_id %>
+</p>
+
+<p>
+  <strong>5g:</strong>
+  <%= @network.5g %>
+</p>
+
+<p>
+  <strong>Station:</strong>
+  <%= @network.station_id %>
+</p>
+
+<p>
+  <strong>Bandwidth:</strong>
+  <%= @network.bandwidth %>
+</p>
+
+<%= link_to 'Edit', edit_network_path(@network) %> |
+<%= link_to 'Back', networks_path %>
