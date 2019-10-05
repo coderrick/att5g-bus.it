@@ -1,2 +1,0 @@
-class Fourd < ApplicationRecord
-end
