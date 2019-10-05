@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "home#home"
   resources :fourds
   resources :entertainments
   resources :networks
