@@ -1,0 +1,2 @@
+class Fourd < ApplicationRecord
+end
