@@ -14,25 +14,40 @@
  *= require_self
  */
 
+ .d-inline-block {
+   height: 60px;
+   width: 60px;
+ }
+
+
  .mainview {
    display: flex;
-   background-image: url();
+   background-image: url(<%= asset_path 'bus.jpg' %>);
+   background-size: 100%;
+   height: 100vh;
+ }
+
+ .header {
+   display: inline-block;
+   flex-wrap: nowrap;
+   flex-direction: row;
+   justify-content: space-around;
  }
 
  .fourd {
    background-image: url(<%= asset_path 'virtual-reality-glasses.svg' %>);
-   height: 15vh;
-   width: 30%;
+   width: 1.5em;
+   height: 1.5em;
  }
 
  .entertainment {
    background-image: url(<%= asset_path 'virtual-reality.svg' %>);
-   height: 15vh;
-   width: 30%;
+   width:1.5em;
+   height:1.5em;
  }
 
  .network {
    background-image: url(<%= asset_path 'vr-glasses.svg' %>);
-   height: 15vh;
-   width: 30%;
+   width:1.5em;
+   height:1.5em;
  }
