@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_05_213019) do
+ActiveRecord::Schema.define(version: 2019_10_06_011243) do
 
   create_table "entertainments", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2019_10_05_213019) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "five_g"
+    t.string "lat"
+    t.string "long"
   end
 
 end
