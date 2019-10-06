@@ -13,6 +13,7 @@ bin/
 gen/
 out/
 
+
 # Gradle files
 .gradle/
 build/
@@ -70,3 +71,6 @@ fastlane/readme.md
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+tmp/
+public/assets
+.browserslistrc

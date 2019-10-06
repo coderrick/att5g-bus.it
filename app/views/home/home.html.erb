@@ -1,3 +1,4 @@
+
 <div class="mainview">
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" >
@@ -20,5 +21,13 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Find Experiences</button>
     </form>
   </nav>
+  <div class="vid">
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="snap">Snap Photo</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <script src="client.js"></script>
+    <%= javascript_pack_tag 'client', 'data-turbolinks-track': 'reload' %>
+  </div>
+
 
 </div>
