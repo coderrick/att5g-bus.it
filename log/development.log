@@ -12,3 +12,939 @@ Processing by HomeController#home as HTML
 Completed 200 OK in 933ms (Views: 922.8ms | ActiveRecord: 0.0ms | Allocations: 1288494)
 
 
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+Started GET "/" for ::1 at 2019-10-05 20:05:22 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(785891845895461620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNetworks (20191005204241)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE TABLE "networks" ("id" bigserial primary key, "bus_id" integer, "station_id" integer, "bandwidth" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191005204241"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEntertainments (20191005204312)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "entertainments" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191005204312"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFourds (20191005204346)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "fourds" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191005204346"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFiveGToNetworks (20191005213019)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "networks" ADD "five_g" boolean[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191005213019"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLatLongToNetworks (20191006011243)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "networks" ADD "lat" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "networks" ADD "long" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191006011243"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(785891845895461620)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(785891845895461620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameLatAndLong (20191006030704)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "networks" RENAME COLUMN "lat" TO "start"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "networks" RENAME COLUMN "long" TO "end"[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191006030704"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(785891845895461620)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-10-05 20:10:06 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 4230.1ms | Allocations: 1423014)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 4486ms (Views: 4470.6ms | ActiveRecord: 0.0ms | Allocations: 1436354)
+
+
+Started GET "/" for ::1 at 2019-10-05 20:10:54 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1781)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 576ms (Views: 574.1ms | ActiveRecord: 0.0ms | Allocations: 18763)
+
+
+Started GET "/" for ::1 at 2019-10-05 20:11:19 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1771)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 611ms (Views: 610.1ms | ActiveRecord: 0.0ms | Allocations: 19100)
+
+
+Started GET "/" for ::1 at 2019-10-05 20:11:29 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1768)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 599ms (Views: 597.9ms | ActiveRecord: 0.0ms | Allocations: 19137)
+
+
+Started GET "/" for ::1 at 2019-10-05 20:11:36 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1771)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 584ms (Views: 583.1ms | ActiveRecord: 0.0ms | Allocations: 19962)
+
+
+Started GET "/" for ::1 at 2019-10-05 20:12:07 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1771)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 639ms (Views: 638.0ms | ActiveRecord: 0.0ms | Allocations: 19093)
+
+
+Started GET "/" for ::1 at 2019-10-05 20:13:10 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1939)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 204ms (Views: 202.0ms | ActiveRecord: 0.0ms | Allocations: 12488)
+
+
+Started GET "/" for ::1 at 2019-10-05 20:13:45 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1778)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 585ms (Views: 584.1ms | ActiveRecord: 0.0ms | Allocations: 19588)
+
+
+Started GET "/cable" for ::1 at 2019-10-05 20:14:10 -0700
+Started GET "/cable/" [WebSocket] for ::1 at 2019-10-05 20:14:10 -0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "StreamChannel"
+Started GET "/" for ::1 at 2019-10-05 20:15:02 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1768)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 743ms (Views: 741.8ms | ActiveRecord: 0.0ms | Allocations: 19077)
+
+
+Started GET "/" for ::1 at 2019-10-05 20:15:12 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1768)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 698ms (Views: 696.9ms | ActiveRecord: 0.0ms | Allocations: 19115)
+
+
+Started GET "/" for ::1 at 2019-10-05 20:15:48 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1768)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 580ms (Views: 578.9ms | ActiveRecord: 0.0ms | Allocations: 19158)
+
+
+Started GET "/" for ::1 at 2019-10-05 20:16:03 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1768)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 612ms (Views: 611.3ms | ActiveRecord: 0.0ms | Allocations: 19082)
+
+
+Started GET "/networks" for ::1 at 2019-10-05 20:17:16 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT COUNT({:conditions=>["five_g = ?", false]}) FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:6
+  Rendered networks/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 3345)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 9.9ms | Allocations: 4828)
+
+
+  
+ActionView::Template::Error (PG::SyntaxError: ERROR:  syntax error at or near "{"
+LINE 1: SELECT COUNT({:conditions=>["five_g = ?", false]}) FROM "net...
+                     ^
+):
+    3: <h1>Networks</h1>
+    4: 
+    5: <div class="chart1">
+    6:   <%= line_chart = @networks.count(:conditions => [ 'five_g = ?', false ]) == 0 %>
+    7: 
+    8: </div>
+    9: 
+  
+app/views/networks/index.html.erb:6
+Started GET "/networks" for ::1 at 2019-10-05 20:18:08 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[36mNetwork Load (1.6ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered networks/index.html.erb within layouts/application (Duration: 411.8ms | Allocations: 197581)
+Completed 500 Internal Server Error in 416ms (ActiveRecord: 2.3ms | Allocations: 198850)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bus_id' for #<#<Class:0x00007fea0b484818>:0x00007fea0b48edb8>):
+    3: <h1>Networks</h1>
+    4: 
+    5: <div class="chart1">
+    6:   <%= line_chart = @networks.count(bus_id) %>
+    7: 
+    8: </div>
+    9: 
+  
+app/views/networks/index.html.erb:6
+Started GET "/networks" for ::1 at 2019-10-05 20:18:29 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[36mNetwork Load (0.5ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Network Load (0.0ms)[0m  [1m[34mSELECT "networks".* FROM "networks" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered networks/index.html.erb within layouts/application (Duration: 410.5ms | Allocations: 197447)
+Completed 500 Internal Server Error in 414ms (ActiveRecord: 0.6ms | Allocations: 198688)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bus_id' for #<#<Class:0x00007fea0fa281f8>:0x00007fea0fa324f0>):
+    3: <h1>Networks</h1>
+    4: 
+    5: <div class="chart1">
+    6:   <%= line_chart = @networks.reduce(bus_id) %>
+    7: 
+    8: </div>
+    9: 
+  
+app/views/networks/index.html.erb:6
+Started GET "/networks" for ::1 at 2019-10-05 20:20:59 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  Rendered networks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1255)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2497)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p id="notice"><%= notice %></p>
+
+<h1>Networks</h1>
+
+<div class="chart1">
+  <%= line_chart @networks.map { |network|
+    {name: "total buses", data: network.bus_id.group_by(:created_at).count}
+} %>
+
+  <% end %>
+
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bus</th>
+      <th>5g</th>
+      <th>Station</th>
+      <th>Bandwidth</th>
+      <th>Start</th>
+      <th>End</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @networks.each do |network| %>
+      <tr>
+        <td><%= network.bus_id %></td>
+        <td><%= network.five_g %></td>
+        <td><%= network.station_id %></td>
+        <td><%= network.bandwidth %></td>
+        <td><%= network.start %></td>
+        <td><%= network.end %></td>
+        <td><%= link_to 'Show', network %></td>
+        <td><%= link_to 'Edit', edit_network_path(network) %></td>
+        <td><%= link_to 'Destroy', network, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network', new_network_path %>
+<%= link_to 'home', root_path %>
+
+):
+1:    <p id="notice"><%= notice %></p>
+2:    
+3:    <h1>Networks</h1>
+4:    
+5:    <div class="chart1">
+6:      <%= line_chart @networks.map { |network|
+7:        {name: "total buses", data: network.bus_id.group_by(:created_at).count}
+8:    } %>
+9:    
+10:      <% end %>
+11:    
+12:    </div>
+13:    
+14:    <table>
+15:      <thead>
+16:        <tr>
+17:          <th>Bus</th>
+18:          <th>5g</th>
+19:          <th>Station</th>
+20:          <th>Bandwidth</th>
+21:          <th>Start</th>
+22:          <th>End</th>
+23:          <th colspan="3"></th>
+24:        </tr>
+25:      </thead>
+26:    
+27:      <tbody>
+28:        <% @networks.each do |network| %>
+29:          <tr>
+30:            <td><%= network.bus_id %></td>
+31:            <td><%= network.five_g %></td>
+32:            <td><%= network.station_id %></td>
+33:            <td><%= network.bandwidth %></td>
+34:            <td><%= network.start %></td>
+35:            <td><%= network.end %></td>
+36:            <td><%= link_to 'Show', network %></td>
+37:            <td><%= link_to 'Edit', edit_network_path(network) %></td>
+38:            <td><%= link_to 'Destroy', network, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+39:          </tr>
+40:        <% end %>
+41:      </tbody>
+42:    </table>
+43:    
+44:    <br>
+45:    
+46:    <%= link_to 'New Network', new_network_path %>
+47:    <%= link_to 'home', root_path %>
+  
+app/views/networks/index.html.erb:50: syntax error, unexpected end, expecting end-of-input
+app/views/networks/index.html.erb:50: syntax error, unexpected end, expecting end-of-input
+app/views/networks/index.html.erb:50: syntax error, unexpected end, expecting end-of-input
+app/views/networks/index.html.erb:50: syntax error, unexpected end, expecting end-of-input
+app/views/networks/index.html.erb:50: syntax error, unexpected end, expecting end-of-input
+app/views/networks/index.html.erb:50: syntax error, unexpected end, expecting end-of-input
+Started GET "/networks" for ::1 at 2019-10-05 20:21:25 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[36mNetwork Load (0.5ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:6:in `map'
+  Rendered networks/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1114)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 260ms (Views: 257.3ms | ActiveRecord: 0.5ms | Allocations: 11946)
+
+
+Started GET "/networks/new" for ::1 at 2019-10-05 20:21:30 -0700
+Processing by NetworksController#new as HTML
+  Rendering networks/new.html.erb within layouts/application
+  Rendered networks/_form.html.erb (Duration: 30.4ms | Allocations: 6009)
+  Rendered networks/new.html.erb within layouts/application (Duration: 32.5ms | Allocations: 6357)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 220ms (Views: 198.8ms | ActiveRecord: 7.4ms | Allocations: 21665)
+
+
+Started POST "/networks" for ::1 at 2019-10-05 20:21:41 -0700
+Processing by NetworksController#create as HTML
+  Parameters: {"authenticity_token"=>"2yeEHA41QCWviqNuGrYALNKLPEJq4vx4qz6WFk/sQ9EHS40iJo+4B1aL6hjtfxVCcZtjWJn2xDV7oiKZqX+JdA==", "network"=>{"bus_id"=>"1", "five_g"=>"1", "station_id"=>"3", "bandwidth"=>"500"}, "commit"=>"Create Network"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/networks_controller.rb:30:in `block in create'
+  [1m[36mNetwork Create (3.4ms)[0m  [1m[32mINSERT INTO "networks" ("bus_id", "station_id", "bandwidth", "created_at", "updated_at", "five_g") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["bus_id", 1], ["station_id", 3], ["bandwidth", "500"], ["created_at", "2019-10-06 03:21:41.830654"], ["updated_at", "2019-10-06 03:21:41.830654"], ["five_g", true]]
+  ↳ app/controllers/networks_controller.rb:30:in `block in create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/networks_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/networks/1
+Completed 302 Found in 13ms (ActiveRecord: 4.6ms | Allocations: 2976)
+
+
+Started GET "/networks/1" for ::1 at 2019-10-05 20:21:41 -0700
+Processing by NetworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNetwork Load (0.4ms)[0m  [1m[34mSELECT "networks".* FROM "networks" WHERE "networks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/networks_controller.rb:67:in `set_network'
+  Rendering networks/show.html.erb within layouts/application
+  Rendered networks/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 319)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 217ms (Views: 210.5ms | ActiveRecord: 0.4ms | Allocations: 11263)
+
+
+Started GET "/networks" for ::1 at 2019-10-05 20:21:43 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[36mNetwork Load (0.4ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:6:in `map'
+  Rendered networks/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2238)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms | Allocations: 2725)
+
+
+  
+ActionView::Template::Error (undefined method `group_by' for 1:Integer):
+    4: 
+    5: <div class="chart1">
+    6:   <%= line_chart @networks.map { |network|
+    7:     {name: "total buses", data: network.bus_id.group_by(:created_at).count}
+    8: } %>
+    9: 
+   10: </div>
+  
+app/views/networks/index.html.erb:7
+app/views/networks/index.html.erb:6:in `map'
+app/views/networks/index.html.erb:6
+Started GET "/networks" for ::1 at 2019-10-05 20:24:13 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[36mNetwork Load (0.5ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:6:in `map'
+  Rendered networks/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2763)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms | Allocations: 3997)
+
+
+  
+ActionView::Template::Error (undefined method `group_by' for "1":String):
+    4: 
+    5: <div class="chart1">
+    6:   <%= line_chart @networks.map { |network|
+    7:     {name: "total buses", data: network.bus_id.to_s.group_by(:created_at).count}
+    8: } %>
+    9: 
+   10: </div>
+  
+app/views/networks/index.html.erb:7
+app/views/networks/index.html.erb:6:in `map'
+app/views/networks/index.html.erb:6
+Started GET "/networks" for ::1 at 2019-10-05 20:29:33 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[36mNetwork Load (0.6ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:6:in `map'
+  Rendered networks/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2582)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms | Allocations: 3816)
+
+
+  
+ActionView::Template::Error (undefined method `group' for 1:Integer):
+    4: 
+    5: <div class="chart1">
+    6:   <%= line_chart @networks.map { |network|
+    7:     {name: "total buses", data: network.bus_id.group(:created_at).count}
+    8: } %>
+    9: 
+   10: </div>
+  
+app/views/networks/index.html.erb:7
+app/views/networks/index.html.erb:6:in `map'
+app/views/networks/index.html.erb:6
+Started GET "/networks" for ::1 at 2019-10-05 20:32:03 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.4ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1946)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 500 Internal Server Error in 322ms (ActiveRecord: 6.8ms | Allocations: 21420)
+
+
+  
+ActionView::Template::Error (The asset "application.js" is not present in the asset pipeline.):
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+    11:     <%= javascript_include_tag "application", "chartkick" %>
+    12:   </head>
+    13: 
+    14:   <body>
+  
+app/views/layouts/application.html.erb:11
+Started GET "/networks" for ::1 at 2019-10-05 20:33:31 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.3ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 20.7ms | Allocations: 8351)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 500 Internal Server Error in 1848ms (ActiveRecord: 7.1ms | Allocations: 1420435)
+
+
+  
+ActionView::Template::Error (The asset "application.js" is not present in the asset pipeline.):
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+    11:     <%= javascript_include_tag "application", "chartkick" %>
+    12:   </head>
+    13: 
+    14:   <body>
+  
+app/views/layouts/application.html.erb:11
+Started GET "/networks" for ::1 at 2019-10-05 20:34:32 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (3.5ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 29.4ms | Allocations: 8351)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 500 Internal Server Error in 2022ms (ActiveRecord: 10.8ms | Allocations: 1409214)
+
+
+  
+ActionView::Template::Error (Webpacker can't find http://www.google.com/jsapi in /Users/medright/att/att5g-bus.it/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+  "application.js": "/packs/js/application-05bc83490fcade04d051.js",
+  "application.js.map": "/packs/js/application-05bc83490fcade04d051.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-05bc83490fcade04d051.js"
+      ],
+      "js.map": [
+        "/packs/js/application-05bc83490fcade04d051.js.map"
+      ]
+    }
+  }
+}
+):
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag "http://www.google.com/jsapi", "chartkick" %>
+    11:     <%= javascript_pack_tag "application", "chartkick" %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10
+Started GET "/networks" for ::1 at 2019-10-05 20:36:13 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.4ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 23.4ms | Allocations: 8351)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 500 Internal Server Error in 1846ms (ActiveRecord: 8.3ms | Allocations: 1409214)
+
+
+  
+ActionView::Template::Error (Webpacker can't find http://www.google.com/jsapi in /Users/medright/att/att5g-bus.it/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+  "application.js": "/packs/js/application-05bc83490fcade04d051.js",
+  "application.js.map": "/packs/js/application-05bc83490fcade04d051.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-05bc83490fcade04d051.js"
+      ],
+      "js.map": [
+        "/packs/js/application-05bc83490fcade04d051.js.map"
+      ]
+    }
+  }
+}
+):
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag "http://www.google.com/jsapi", "chartkick" %>
+    11:     <%= javascript_pack_tag "application", "chartkick" %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10
+Started GET "/networks" for ::1 at 2019-10-05 20:38:54 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.5ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 29.6ms | Allocations: 8351)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 500 Internal Server Error in 2025ms (ActiveRecord: 7.8ms | Allocations: 1409213)
+
+
+  
+ActionView::Template::Error (Webpacker can't find http://www.google.com/jsapi in /Users/medright/att/att5g-bus.it/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+  "application.js": "/packs/js/application-05bc83490fcade04d051.js",
+  "application.js.map": "/packs/js/application-05bc83490fcade04d051.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-05bc83490fcade04d051.js"
+      ],
+      "js.map": [
+        "/packs/js/application-05bc83490fcade04d051.js.map"
+      ]
+    }
+  }
+}
+):
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag "http://www.google.com/jsapi", "chartkick" %>
+    11:     <%= javascript_pack_tag "application", "chartkick" %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10
+Started GET "/networks" for ::1 at 2019-10-05 20:39:01 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.4ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1614)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 500 Internal Server Error in 332ms (ActiveRecord: 0.9ms | Allocations: 14325)
+
+
+  
+ActionView::Template::Error (Webpacker can't find http://www.google.com/jsapi in /Users/medright/att/att5g-bus.it/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+  "application.js": "/packs/js/application-05bc83490fcade04d051.js",
+  "application.js.map": "/packs/js/application-05bc83490fcade04d051.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-05bc83490fcade04d051.js"
+      ],
+      "js.map": [
+        "/packs/js/application-05bc83490fcade04d051.js.map"
+      ]
+    }
+  }
+}
+):
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag "http://www.google.com/jsapi", "chartkick" %>
+    11:     <%= javascript_pack_tag "application", "chartkick" %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10
+Started GET "/networks" for ::1 at 2019-10-05 20:39:39 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.5ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1923)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 500 Internal Server Error in 471ms (ActiveRecord: 1.3ms | Allocations: 17582)
+
+
+  
+ActionView::Template::Error (Webpacker can't find chartkick in /Users/medright/att/att5g-bus.it/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+  "application.js": "/packs/js/application-05bc83490fcade04d051.js",
+  "application.js.map": "/packs/js/application-05bc83490fcade04d051.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-05bc83490fcade04d051.js"
+      ],
+      "js.map": [
+        "/packs/js/application-05bc83490fcade04d051.js.map"
+      ]
+    }
+  }
+}
+):
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag "application", "chartkick" %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/networks" for ::1 at 2019-10-05 20:43:22 -0700
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.6ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1915)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 241ms (Views: 238.2ms | ActiveRecord: 1.1ms | Allocations: 12669)
+
+
+Started GET "/networks" for ::1 at 2019-10-05 20:44:03 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.4ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 28.6ms | Allocations: 8353)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 1613ms (Views: 1587.8ms | ActiveRecord: 6.7ms | Allocations: 1406020)
+
+
+Started GET "/networks" for ::1 at 2019-10-05 20:44:57 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.8ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 24.8ms | Allocations: 8351)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 1671ms (Views: 1649.4ms | ActiveRecord: 9.4ms | Allocations: 1406022)
+
+
+Started GET "/networks" for ::1 at 2019-10-05 20:47:35 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.6ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 30.0ms | Allocations: 8351)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 2225ms (Views: 2198.6ms | ActiveRecord: 7.7ms | Allocations: 1411750)
+
+
+Started GET "/cable" for ::1 at 2019-10-05 20:50:08 -0700
+Started GET "/cable/" [WebSocket] for ::1 at 2019-10-05 20:50:08 -0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "StreamChannel"
+Started GET "/networks" for ::1 at 2019-10-05 20:51:57 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NetworksController#index as HTML
+  Rendering networks/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "networks"."bus_id" AS networks_bus_id FROM "networks" GROUP BY "networks"."bus_id"[0m
+  ↳ app/views/networks/index.html.erb:6
+  [1m[36mNetwork Load (0.4ms)[0m  [1m[34mSELECT "networks".* FROM "networks"[0m
+  ↳ app/views/networks/index.html.erb:24
+  Rendered networks/index.html.erb within layouts/application (Duration: 34.0ms | Allocations: 8355)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+/Users/medright/.rbenv/versions/2.6.4/bin/ruby: No such file or directory -- ./bin/webpack (LoadError)
+
+Completed 200 OK in 1879ms (Views: 1845.2ms | ActiveRecord: 20.3ms | Allocations: 1406620)
+
+

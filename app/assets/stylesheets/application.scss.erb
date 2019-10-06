@@ -14,9 +14,13 @@
  *= require_self
  */
 
+ body {
+   background-color: #54c7b6;
+ }
+
  .d-inline-block {
-   height: 60px;
-   width: 60px;
+   height: 7.0em;
+   width: 7.0em;
  }
 
 
@@ -27,27 +31,24 @@
    height: 100vh;
  }
 
- .header {
-   display: inline-block;
-   flex-wrap: nowrap;
-   flex-direction: row;
-   justify-content: space-around;
- }
-
  .fourd {
-   background-image: url(<%= asset_path 'virtual-reality-glasses.svg' %>);
-   width: 1.5em;
-   height: 1.5em;
+   background-image: url(<%= asset_path 'virtual-reality.svg' %>);
+
+
  }
 
  .entertainment {
-   background-image: url(<%= asset_path 'virtual-reality.svg' %>);
-   width:1.5em;
-   height:1.5em;
+   background-image: url(<%= asset_path 'virtual-reality-glasses.svg' %>);
+
+
  }
 
  .network {
    background-image: url(<%= asset_path 'vr-glasses.svg' %>);
-   width:1.5em;
-   height:1.5em;
+
+
+ }
+
+ .form-inline {
+   float: right;
  }
